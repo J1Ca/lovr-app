@@ -27,7 +27,7 @@ function MapScreen({navigation, user, onReceiver, onMatch}) {
     const _getLocationAsync = async () => {
       let { status } = await Permissions.askAsync(Permissions.LOCATION);
       if (status !== 'granted') {
-        // some code here
+        // some error code here
       }
       
       let location = await Location.getCurrentPositionAsync({});
@@ -129,7 +129,6 @@ function MapScreen({navigation, user, onReceiver, onMatch}) {
 
   var NewUsers = 
     nearbyUsers.map((user,i) => {
-      //todo => dont show my fake position
       if(user.coords != null){
         if (user.id) {
           return (
